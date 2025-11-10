@@ -19,6 +19,7 @@ class Assets {
   static const String imagesPaypal = 'assets/images/paypal.png';
   static const String imagesPlay = 'assets/images/play.png';
   static const String imagesPlayerStatic = 'assets/images/player_static.png';
+  static const String imagesPm = 'assets/images/pm.png';
   static const String imagesRc = 'assets/images/rc.png';
   static const String imagesRegisterNewPlayer = 'assets/images/registerNewPlayer.png';
   static const String imagesSettings = 'assets/images/settings.png';

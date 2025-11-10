@@ -1,4 +1,5 @@
 import 'package:dartmasterapp/config/constants/app_colors.dart';
+import 'package:dartmasterapp/config/constants/app_fonts.dart';
 import 'package:dartmasterapp/config/constants/app_sizes.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
@@ -241,43 +242,62 @@ class CompetitionStatisticsScreen extends StatelessWidget {
                         children: [
                           ScoreRow(scores: ['26', '276']),
                           ScoreRow(scores: ['26', '276']),
-                          ScoreRow(scores: ['26', '276']),
-                          ScoreRow(scores: ['26', '276']),
+
                         ],
                       ),
                     ),
                     // Middle column with numbers
                     Container(
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 0.5,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
                       width: 40,
                       child: Column(
                         children: const [
                           ScoreNumber(number: '3'),
-                          ScoreNumber(number: '6'),
-                          ScoreNumber(number: '9'),
                           ScoreNumber(number: '12', isHighlighted: true),
                           ScoreNumber(number: '15', isHighlighted: true),
                         ],
                       ),
                     ),
-                    // Rob's scores (right side)
+                    Container(
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 0.5,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                     Expanded(
                       child: Column(
                         children: [
                           ScoreRow(scores: ['26', '276']),
                           ScoreRow(scores: ['26', '276']),
-                          ScoreRow(scores: ['26', '276']),
-                          ScoreRow(scores: ['26', '276']),
+
                         ],
                       ),
                     ),
                     // Scrollbar
                     Container(
-                      width: 20,
-                      margin: const EdgeInsets.only(left: 8),
+                      width: 15,
+                      margin: const EdgeInsets.only(left: 8,top: 10,bottom: 10),
                       child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.orange[700],
-                          borderRadius: BorderRadius.circular(10),
+                        decoration: ShapeDecoration(
+                          color: const Color(0x569E875C),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
@@ -285,8 +305,6 @@ class CompetitionStatisticsScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            Spacer(),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(color: kQuaternaryColor),
@@ -305,140 +323,9 @@ class CompetitionStatisticsScreen extends StatelessWidget {
 
 
 
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Player Score',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF2C3E3C),
-      ),
-      home: const PlayerScoreScreen(),
-    );
-  }
-}
 
-class PlayerScoreScreen extends StatelessWidget {
-  const PlayerScoreScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            // Top border line
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 0.5,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            // Player names
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text(
-                    "Andy",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white70,
-                    ),
-                  ),
-                  Text(
-                    "Rob",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Bottom border line
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 0.5,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            // Score rows
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    // Andy's scores (left side)
-                    Column(
-                      children: [
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                      ],
-                    ),
-                    // Middle column with numbers
-                    SizedBox(
-                      width: 40,
-                      child: Column(
-                        children: const [
-                          ScoreNumber(number: '3'),
-                          ScoreNumber(number: '6'),
-                          ScoreNumber(number: '9'),
-                          ScoreNumber(number: '12', isHighlighted: true),
-                          ScoreNumber(number: '15', isHighlighted: true),
-                        ],
-                      ),
-                    ),
-                    // Rob's scores (right side)
-                    Column(
-                      children: [
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                        ScoreRow(scores: ['26', '276']),
-                      ],
-                    ),
-                    // Scrollbar
-                    Container(
-                      width: 15,
-                      height: 141,
-                      decoration: ShapeDecoration(
-                        color: const Color(0x569E875C),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class ScoreRow extends StatelessWidget {
   final List<String> scores;
@@ -450,35 +337,32 @@ class ScoreRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              scores[0],
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.white70,
-              ),
-            ),
-            const Text(
-              '-',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white70,
-              ),
-            ),
-            Text(
-              scores[1],
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.white70,
-              ),
-            ),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          MyText(
+            text: scores[0],
+            size: 14,
+            weight: FontWeight.w400,
+            color: kQuaternaryColor,
+            fontFamily: AppFonts.montez,
+          ),
+           MyText(
+            text: '-',
+            size: 14,
+            weight: FontWeight.w400,
+            color: kQuaternaryColor,
+          ),
+          MyText(
+           text:  scores[1],
+            size: 14,
+            weight: FontWeight.w400,
+            color: kQuaternaryColor,
+            fontFamily: AppFonts.montez,
+          ),
+        ],
       ),
     );
   }
@@ -496,15 +380,14 @@ class ScoreNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: Center(
-        child: Text(
-          number,
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-            color: isHighlighted ? Colors.orange[700] : Colors.white70,
-          ),
+        child: MyText(
+          text: number,
+          size: 18,
+          weight: FontWeight.w500,
+          color: kYellowColor,
         ),
       ),
     );
@@ -591,13 +474,13 @@ class _KeypadScreenState extends State<KeypadScreen> {
                           children: [
                             Expanded(
                               child: ActionButton(
-                                label: 'Back',
+                                label: 'No score',
                                 onPressed: onBackPressed,
                               ),
                             ),
                             Expanded(
                               child: ActionButton(
-                                label: 'Edit',
+                                label: 'Game \nShot',
                                 onPressed: () => print('Edit pressed'),
                               ),
                             ),

@@ -31,7 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       effects: [FadeEffect(duration: Duration(milliseconds: 500))],
       child: AppBar(
         automaticallyImplyLeading: false,
-        centerTitle: false,
+        centerTitle: true,
         backgroundColor: kBackGroundColor,
         titleSpacing: showBackButton ? 0 : null,
         leading: showBackButton ? InkWell(
@@ -46,10 +46,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: title != null
             ? MyText(
           text: title!,
-          size: 20,
-          weight: FontWeight.w600,
-          color: kBlackColor,
-          fontFamily: AppFonts.mulish,
+          size: 18,
+          weight: FontWeight.w400,
+          color: kQuaternaryColor,
+          fontFamily: AppFonts.audioWide,
         )
             : child,
         actions: actions,

@@ -28,7 +28,7 @@ class StartScreen extends StatelessWidget {
             SizedBox(height: 80,),
             GestureDetector(
               onTap: (){
-                Get.to(() => RegisterScreen());
+                Get.to(() => RegisterScreen(trail: true,));
               },
               child: Container(
                 width: double.infinity,
@@ -58,7 +58,7 @@ class StartScreen extends StatelessWidget {
             SizedBox(height: 10,),
             GestureDetector(
               onTap: (){
-                Get.to(() => RegisterScreen());
+                Get.to(() => RegisterScreen(trail: false,));
               },
               child: Container(
                 width: double.infinity,

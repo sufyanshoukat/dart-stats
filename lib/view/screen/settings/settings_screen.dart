@@ -4,6 +4,7 @@ import 'package:dartmasterapp/generated/assets.dart';
 import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
+import 'package:dartmasterapp/view/screen/membership_renewal/membership_renewal_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -103,64 +104,7 @@ class SettingsScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Divider(color: kDividerColor),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                MyText(
-                                  text: "Account Created",
-                                  size: 16,
-                                  weight: FontWeight.w600,
-                                  color: kTFBorderColor,
-                                ),
-                                Row(
-                                  children: [
-                                    MyText(
-                                      text: "",
-                                      size: 12,
-                                      weight: FontWeight.w500,
-                                      color: kGreyLightColor,
-                                    ),
-                                    const SizedBox(width: 5),
-                                    CommonImageView(
-                                      svgPath: Assets.svgChevronRight,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Divider(color: kDividerColor),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                MyText(
-                                  text: "Renew Membership",
-                                  size: 16,
-                                  weight: FontWeight.w600,
-                                  color: kTFBorderColor,
-                                ),
-                                Row(
-                                  children: [
-                                    MyText(
-                                      text: "",
-                                      size: 12,
-                                      weight: FontWeight.w500,
-                                      color: kGreyLightColor,
-                                    ),
-                                    const SizedBox(width: 5),
-                                    CommonImageView(
-                                      svgPath: Assets.svgChevronRight,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
+
                           Divider(color: kDividerColor),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -270,6 +214,40 @@ class SettingsScreen extends StatelessWidget {
                                 ),
                                 CommonImageView(svgPath: Assets.svgChevronRight),
                               ],
+                            ),
+                          ),
+                          Divider(color: kDividerColor),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>MembershipRenewalScreen());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  MyText(
+                                    text: "Renew Membership",
+                                    size: 16,
+                                    weight: FontWeight.w600,
+                                    color: kTFBorderColor,
+                                  ),
+                                  Row(
+                                    children: [
+                                      MyText(
+                                        text: "",
+                                        size: 12,
+                                        weight: FontWeight.w500,
+                                        color: kGreyLightColor,
+                                      ),
+                                      const SizedBox(width: 5),
+                                      CommonImageView(
+                                        svgPath: Assets.svgChevronRight,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           Divider(color: kDividerColor),

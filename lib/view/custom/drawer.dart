@@ -4,6 +4,7 @@ import 'package:dartmasterapp/generated/assets.dart';
 import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
 import 'package:dartmasterapp/view/custom/custom_animated_row.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
+import 'package:dartmasterapp/view/screen/competition_statistics/competition_statistics_screen.dart';
 import 'package:dartmasterapp/view/screen/fixture/fixture_screen.dart';
 import 'package:dartmasterapp/view/screen/fixture/onevsone_screen.dart';
 import 'package:dartmasterapp/view/screen/home/edit_player_screen.dart';
@@ -44,13 +45,13 @@ class CustomDrawer extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    /*_buildDrawerItem(
+                    _buildDrawerItem(
                       "Home",
                       Assets.svgD1,
                           () {
                         Get.back();
                       },
-                    ),*/
+                    ),
                     _buildDrawerItem(
                       "Player Details",
                       Assets.svgD2,
@@ -79,8 +80,6 @@ class CustomDrawer extends StatelessWidget {
                             Get.to(() => PlayerRankingScreen());
                       },
                     ),
-                    Divider(color: kQuaternaryColor,thickness: 0.5,),
-                    SizedBox(height: 30,),
                     _buildDrawerItem(
                       "Fixtures",
                       Assets.svgD6,
@@ -93,17 +92,16 @@ class CustomDrawer extends StatelessWidget {
                       Assets.svgD7,
                           () {
                             Get.to(() => OnevsoneScreen());
+
                       },
                     ),
                     _buildDrawerItem(
                       "Competition Statistics",
                       Assets.svgD4,
                           () {
-                        // DialogHelper.LogOutDialog(context);
+                            Get.to(() => CompetitionStatisticsScreen());
                       },
                     ),
-                    Divider(color: kQuaternaryColor,thickness: 0.5,),
-                    SizedBox(height: 30,),
                     _buildDrawerItem(
                       "Payment Method",
                       Assets.svgD8,

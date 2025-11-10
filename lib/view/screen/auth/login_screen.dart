@@ -101,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: 80,),
                 GestureDetector(
                   onTap: (){
-                    Get.to(() => RegisterScreen());
+                    Get.to(() => RegisterScreen(trail: false,));
                   },
                   child: Align(
                     alignment: Alignment.center,

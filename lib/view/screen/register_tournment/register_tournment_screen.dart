@@ -1,5 +1,6 @@
 import 'package:dartmasterapp/config/constants/app_colors.dart';
 import 'package:dartmasterapp/config/constants/app_sizes.dart';
+import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/custom/my_textfeild.dart';
@@ -15,6 +16,7 @@ class RegisterTournmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,

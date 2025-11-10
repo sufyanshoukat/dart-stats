@@ -3,6 +3,7 @@ import 'package:dartmasterapp/config/constants/app_fonts.dart';
 import 'package:dartmasterapp/config/constants/app_sizes.dart';
 import 'package:dartmasterapp/generated/assets.dart';
 import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
+import 'package:dartmasterapp/view/custom/custom_dropdown.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/custom/my_textfeild.dart';
@@ -13,7 +14,9 @@ import 'package:get/get_core/src/get_main.dart';
 
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+  bool trail  = false;
+   RegisterScreen({super.key,required this.trail});
+  var selectedValue = 'Membership Plan'.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +36,21 @@ class RegisterScreen extends StatelessWidget {
                     child: CommonImageView(imagePath: Assets.imagesBackButton,height: 35,)),
                 SizedBox(height: 24,),
                 MyText(
-                  text: "Register New Account",
+                  text: trail ? "14-Day Trial Register": "Register New Account",
                   size: 26,
                   weight: FontWeight.w400,
                   color: kQuaternaryColor,
                   fontFamily: AppFonts.audioWide,
                 ),
+                if(trail)
+                SizedBox(height: 8,),
+                if(trail)
+                MyText(text: "Payment details are required for registration, payment will not be processes for 14 days. "
+                    "User can close the account any time within the first 14 days at no cost.",
+                  size: 12,
+                  weight: FontWeight.w400,
+                ),
+
                 SizedBox(height: 25,),
                 MyTextField(
                   hint: "Username",
@@ -54,6 +66,21 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 MyTextField(
                   hint: "Confirm Password",
+                ),
+                Obx(
+                      () => CustomDropDown(
+                    hint: 'Membership Plan',
+                    marginBottom: 0,
+                    items: [
+                      'Membership Plan',
+                      'Monthly',
+                      'Yearly',
+                    ],
+                    selectedValue: selectedValue.value,
+                    onChanged: (value) {
+                      selectedValue.value = value;
+                    },
+                  ),
                 ),
 
                 SizedBox(height: 30,),

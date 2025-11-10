@@ -12,6 +12,8 @@ import 'package:dartmasterapp/view/screen/fixture/onevsone_screen.dart';
 import 'package:dartmasterapp/view/screen/home/edit_player_screen.dart';
 import 'package:dartmasterapp/view/screen/home/home_screen.dart';
 import 'package:dartmasterapp/view/screen/home/register_new_player_screen.dart';
+import 'package:dartmasterapp/view/screen/match_report/match_report_screen.dart';
+import 'package:dartmasterapp/view/screen/membership_renewal/membership_renewal_screen.dart';
 import 'package:dartmasterapp/view/screen/payment/payment_detail_screen.dart';
 import 'package:dartmasterapp/view/screen/payment/payment_screen.dart';
 import 'package:dartmasterapp/view/screen/playerStatus/player_ranking_screen.dart';
@@ -64,7 +66,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackGroundColor,
         appBarTheme: AppBarTheme(backgroundColor: kBackGroundColor),
       ),
-      home: CompetitionStatisticsScreen(),
+      home: SplashScreen(),
       defaultTransition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 500),
     );

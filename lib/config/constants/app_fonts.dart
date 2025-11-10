@@ -8,6 +8,7 @@ class AppFonts {
 
   static var audioWide = GoogleFonts.audiowide().fontFamily;
   static var mulish = GoogleFonts.mulish().fontFamily;
+  static var montez = GoogleFonts.montez().fontFamily;
 
 
 

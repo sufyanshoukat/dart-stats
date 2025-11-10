@@ -6,7 +6,10 @@ import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
+import 'package:dartmasterapp/view/screen/match_report/match_report_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
@@ -552,7 +555,9 @@ class OnevsoneScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 Padding(
                   padding: AppSizes.HORIZONTAL,
-                  child: MyButton(onTap: (){}, buttonText: "Next"),
+                  child: MyButton(onTap: (){
+                    Get.to(()=>MatchReportScreen());
+                  }, buttonText: "Next"),
                 ),
                 SizedBox(height: 10,),
                 Padding(
