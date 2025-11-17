@@ -7,6 +7,7 @@ import 'package:dartmasterapp/view/custom/custom_dropdown.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/custom/my_textfeild.dart';
+import 'package:dartmasterapp/view/screen/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -84,7 +85,9 @@ class RegisterScreen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 30,),
-                MyButton(onTap: (){}, buttonText: "Proceed to Payment"),
+                MyButton(onTap: (){
+                  Get.to(()=>PaymentScreen());
+                }, buttonText: "Proceed to Payment"),
                 SizedBox(height: 40,),
                 Row(
                   children: [

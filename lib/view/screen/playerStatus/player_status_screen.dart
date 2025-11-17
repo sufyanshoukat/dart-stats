@@ -7,6 +7,7 @@ import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/custom_dropdown.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
+import 'package:dartmasterapp/view/screen/match_report/match_report_screen.dart';
 import 'package:dartmasterapp/view/screen/playerStatus/player_ranking_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -317,11 +318,16 @@ class PlayerStatusScreen extends StatelessWidget {
                                           ),
                                         ),
                                         SizedBox(width: 20),
-                                        MyText(
-                                          text: "Graph",
-                                          size: 12,
-                                          weight: FontWeight.w500,
-                                          color: kQuaternaryColor,
+                                        GestureDetector(
+                                          onTap:(){
+                                            Get.to(()=>MatchReportScreen());
+                                          },
+                                          child: MyText(
+                                            text: "Graph",
+                                            size: 12,
+                                            weight: FontWeight.w500,
+                                            color: kQuaternaryColor,
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -737,11 +743,16 @@ class PlayerStatusScreen extends StatelessWidget {
                                           ),
                                         ),
                                         SizedBox(width: 20),
-                                        MyText(
-                                          text: "Graph",
-                                          size: 12,
-                                          weight: FontWeight.w500,
-                                          color: kQuaternaryColor,
+                                        GestureDetector(
+                                          onTap:(){
+                                            Get.to(()=>MatchReportScreen());
+                                          },
+                                          child: MyText(
+                                            text: "Graph",
+                                            size: 12,
+                                            weight: FontWeight.w500,
+                                            color: kQuaternaryColor,
+                                          ),
                                         ),
                                       ],
                                     ),

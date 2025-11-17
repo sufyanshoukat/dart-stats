@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              MyButton(onTap: (){}, buttonText: "Kileens Pub Team",fontSize: 22,),
+              MyButton2(onTap: (){}, buttonText: "Kileens Pub Team",fontSize: 22,),
               SizedBox(height: 8),
               MyButton(onTap: (){}, buttonText: "Start Match"),
               SizedBox(height: 20),
@@ -76,23 +76,6 @@ class HomeScreen extends StatelessWidget {
                   )
 
 
-                ],
-              ),
-              SizedBox(height: 20),
-              Stack(
-                children: [
-                  CommonImageView(imagePath: Assets.imagesFreeTrail,),
-                  Positioned(
-                    top: 12,
-                    left: 12,
-                    child: MyText(
-                      text: "Free trial ends in __ Days\nUpgrade to Full version",
-                      size: 18,
-                      weight: FontWeight.w400,
-                      color: kQuaternaryColor,
-                      fontFamily: AppFonts.audioWide,
-                    ),
-                  ),
                 ],
               ),
               SizedBox(height: 15),
@@ -140,6 +123,23 @@ class HomeScreen extends StatelessWidget {
                   )
 
 
+                ],
+              ),
+              SizedBox(height: 20),
+              Stack(
+                children: [
+                  CommonImageView(imagePath: Assets.imagesFreeTrail,),
+                  Positioned(
+                    top: 12,
+                    left: 12,
+                    child: MyText(
+                      text: "Free trial ends in __ Days\nUpgrade to Full version",
+                      size: 18,
+                      weight: FontWeight.w400,
+                      color: kQuaternaryColor,
+                      fontFamily: AppFonts.audioWide,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 20),

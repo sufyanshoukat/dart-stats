@@ -238,3 +238,108 @@ class MyBorderButton extends StatelessWidget {
     );
   }
 }
+
+
+
+class MyButton2 extends StatelessWidget {
+  MyButton2({
+    required this.onTap,
+    required this.buttonText,
+    this.height = 48,
+    this.backgroundColor,
+    this.fontColor = kTextColor,
+    this.borderColor,
+    this.fontSize = 16,
+    this.outlineColor = Colors.transparent,
+    this.radius = 0,
+    this.svgIcon,
+    this.haveSvg = false,
+    this.choiceIcon,
+    this.isleft,
+    this.mhoriz = 0,
+    this.hasicon,
+    this.hasshadow = false,
+    this.mBottom = 0,
+    this.hasgrad = false,
+    this.mTop = 0,
+    this.fontWeight = FontWeight.w600,
+  });
+
+  final String buttonText;
+  final VoidCallback onTap;
+  final double? height;
+  final double radius;
+  final double fontSize;
+  final Color outlineColor;
+  bool? hasicon, isleft, hasshadow, hasgrad;
+  //Widget? choiceIcon;
+  final Color? backgroundColor, fontColor, borderColor;
+  final String? svgIcon, choiceIcon;
+  final bool haveSvg;
+  final double mTop, mBottom, mhoriz;
+  final FontWeight fontWeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        top: mTop,
+        bottom: mBottom,
+        left: mhoriz,
+        right: mhoriz,
+      ),
+      height: height,
+      decoration: hasgrad == true
+          ? BoxDecoration(
+        border: Border(
+          right: BorderSide(color: kYellowLightColor, width: 2),
+          bottom: BorderSide(color: kYellowLightColor, width: 2),
+        ),
+        borderRadius: BorderRadius.circular(radius),
+      )
+          : BoxDecoration(
+        color: backgroundColor ?? kYellowColor,
+        border: Border(
+          right: BorderSide(
+            color: borderColor ?? kYellowLightColor,
+            width: 3,
+          ),
+          bottom: BorderSide(
+            color: borderColor ?? kYellowLightColor,
+            width: 3,
+          ),
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: Row(
+          mainAxisAlignment: isleft == true
+              ? MainAxisAlignment.start
+              : MainAxisAlignment.center,
+          children: [
+            hasicon == true
+                ? Padding(
+              padding: isleft == true
+                  ? const EdgeInsets.only(left: 20.0)
+                  : const EdgeInsets.only(left: 0),
+              child: CommonImageView(
+                imagePath: choiceIcon,
+                height: 24,
+              ),
+            )
+                : const SizedBox.shrink(),
+            MyText(
+              paddingLeft: (hasicon == true) ? 10 : 0,
+              text: buttonText,
+              size: fontSize,
+              color: fontColor,
+              weight: fontWeight,
+              fontFamily: AppFonts.audioWide,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

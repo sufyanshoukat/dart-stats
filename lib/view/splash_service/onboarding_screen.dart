@@ -23,13 +23,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final RxInt selectedIndex = 0.obs;
 
   final List<String> onboardingImages = [
-    Assets.imagesOnboarding,
-    Assets.imagesOnboarding,
-    Assets.imagesOnboarding,
+    Assets.imagesLogo,
+    Assets.imagesLogo,
+    Assets.imagesLogo,
   ];
 
   final List<String> titles = [
-    "WELCOME TO \nDARTMASTER!\n",
+    "WELCOME TO \nDarts Stats!\n",
     "EASY\nSCOREKEEPING",
     "PLAYER AND TEAM\nSTATISTICS",
   ];
@@ -97,7 +97,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 return Column(
                   children: [
                     const Spacer(),
-                    CommonImageView(imagePath: onboardingImages[index]),
+                    CommonImageView(imagePath: onboardingImages[index],height: 200,),
                     const SizedBox(height: 20),
                     MyText(
                       text: titles[index],

@@ -3,6 +3,7 @@ import 'package:dartmasterapp/config/constants/app_sizes.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
+import 'package:dartmasterapp/view/screen/match_report/match_report_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -273,11 +274,16 @@ class PlayerRankingScreen extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(width: 20),
-                                MyText(
-                                  text: "Graph",
-                                  size: 12,
-                                  weight: FontWeight.w500,
-                                  color: kQuaternaryColor,
+                                GestureDetector(
+                                  onTap:(){
+                                    Get.to(()=>MatchReportScreen());
+                                  },
+                                  child: MyText(
+                                    text: "Graph",
+                                    size: 12,
+                                    weight: FontWeight.w500,
+                                    color: kQuaternaryColor,
+                                  ),
                                 ),
                               ],
                             ),

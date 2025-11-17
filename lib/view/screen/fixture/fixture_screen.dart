@@ -927,7 +927,9 @@ class FixtureScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 Padding(
                   padding: AppSizes.HORIZONTAL,
-                  child: MyButton(onTap: () {}, buttonText: "Save For Later"),
+                  child: MyButton(onTap: () {
+                    Get.back();
+                  }, buttonText: "Save For Later"),
                 ),
                 SizedBox(height: 10),
                 Padding(
