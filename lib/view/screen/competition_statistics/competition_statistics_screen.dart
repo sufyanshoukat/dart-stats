@@ -439,7 +439,7 @@ class _KeypadScreenState extends State<KeypadScreen> {
         children: [
           // Grid with keypad and side buttons
           AspectRatio(
-            aspectRatio: 1.1,
+            aspectRatio: 1.5,
             child: Row(
               children: [
                 // Left keypad section (numbers)
@@ -448,7 +448,7 @@ class _KeypadScreenState extends State<KeypadScreen> {
                   child: GridView.builder(
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 1.8, // Makes buttons wider/shorter
+                      childAspectRatio: 2.4, // Makes buttons wider/shorter
                     ),
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),

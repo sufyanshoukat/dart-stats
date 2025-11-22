@@ -16,7 +16,7 @@ class EditPlayerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: "Edit Player\nDetails",),
       body: SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,

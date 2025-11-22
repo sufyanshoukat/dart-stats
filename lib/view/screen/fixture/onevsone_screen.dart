@@ -4,6 +4,7 @@ import 'package:dartmasterapp/config/constants/app_sizes.dart';
 import 'package:dartmasterapp/generated/assets.dart';
 import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
+import 'package:dartmasterapp/view/custom/custom_dropdown.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/screen/match_report/match_report_screen.dart';
@@ -23,7 +24,16 @@ class OnevsoneScreen extends StatelessWidget {
    final RxInt selectedBF = 0.obs;
    final RxInt selectedCustom = 0.obs;
    final RxInt selectedFc = 0.obs;
-  final List<String> matchType = [
+   RxList<String> registeredPlayers = [
+     "John",
+     "Alex",
+     "Michael",
+     "Sara"
+   ].obs;
+
+   var selectedValue = 'Registered Players'.obs;
+
+   final List<String> matchType = [
     "Single",
     "Double",
   ];
@@ -159,6 +169,23 @@ class OnevsoneScreen extends StatelessWidget {
                           }),
                         ),
                       ),
+                      SizedBox(height: 10,),
+                      Obx(
+                            () => CustomDropDown(
+                          hint: 'Select Game Type',
+                          items: [
+                            'Registered Players',
+                            'Guest',
+                          ],
+                          selectedValue: selectedValue.value,
+                          onChanged: (value) {
+                            selectedValue.value = value;
+                          },
+                        ),
+                      ),
+
+
+
                       SizedBox(height: 30,),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,

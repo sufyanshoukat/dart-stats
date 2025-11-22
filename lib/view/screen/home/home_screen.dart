@@ -37,7 +37,9 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 20),
               MyButton2(onTap: (){}, buttonText: "Kileens Pub Team",fontSize: 22,),
               SizedBox(height: 8),
-              MyButton(onTap: (){}, buttonText: "Start Match"),
+              MyButton(onTap: (){
+                Get.to(()=>CompetitionStatisticsScreen());
+              }, buttonText: "Start Match"),
               SizedBox(height: 20),
               Align(
                 alignment:Alignment.topLeft,
@@ -116,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   buildPlayerCard(
                     onTap: (){
-                      Get.to(() => CompetitionStatisticsScreen());
+                      //Get.to(() => CompetitionStatisticsScreen());
                     },
                     text: "Competition\nStatistics",
                     imagePath: Assets.imagesCs,
@@ -159,7 +161,7 @@ class HomeScreen extends StatelessWidget {
         onTap: onTap, // <-- Handles tap event
         child: Container(
           height: 115,
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.symmetric(vertical: 15),
           decoration: ShapeDecoration(
             color: kTFBgColor,
             shape: RoundedRectangleBorder(

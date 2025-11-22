@@ -20,7 +20,7 @@ class RegisterNewPlayerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: isShowAppBrr ? CustomAppBar() : null,
+      appBar: isShowAppBrr ? CustomAppBar(title: "Register New\nPlayers",) : null,
       body: SafeArea(
         child: Padding(
           padding: AppSizes.DEFAULT,

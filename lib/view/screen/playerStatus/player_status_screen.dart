@@ -17,7 +17,10 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 class PlayerStatusScreen extends StatelessWidget {
   bool isShowAppBrr;
    PlayerStatusScreen({super.key,required this.isShowAppBrr});
-  var selectedValue = 'All'.obs;
+  var selectedValue = 'Registered Players'.obs;
+  var gameTypeValue = 'Single'.obs;
+  var legTypeValue = 'Legs'.obs;
+  var legType2Value = 'Legs'.obs;
   final List<String> statLabels = [
     "3 dart avg.",
     "First 9 avg.",
@@ -46,7 +49,9 @@ class PlayerStatusScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2, // number of tabs
       child: Scaffold(
-        appBar: isShowAppBrr ? CustomAppBar() : null,
+        appBar: isShowAppBrr ? CustomAppBar(
+          title: "Statistic",
+        ) : null,
         body: SafeArea(
           child: Padding(
             padding: AppSizes.VERTICAL,
@@ -87,11 +92,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                 () => CustomDropDown(
                                   hint: 'Select Game Type',
                                   items: [
-                                    'All',
-                                    'Action',
-                                    'Strategy',
-                                    'RPG',
-                                    'Puzzle',
+                                    'Registered Players',
+                                    'Guest',
                                   ],
                                   selectedValue: selectedValue.value,
                                   onChanged: (value) {
@@ -116,8 +118,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                         const SizedBox(height: 8),
                                         Obx(
                                           () => Container(
-                                            width: 91,
-                                            height: 22,
+                                            width: 100,
+                                            height: 25,
                                             decoration: ShapeDecoration(
                                               color: const Color(0x38D0A254),
                                               shape: RoundedRectangleBorder(
@@ -127,8 +129,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                             ),
                                             child: DropdownButtonHideUnderline(
                                               child: DropdownButton<String>(
-                                                value: selectedValue
-                                                    .value,
+                                                value: gameTypeValue.value,
                                                 isExpanded: true,
                                                 icon: const Icon(
                                                   Icons.keyboard_arrow_down,
@@ -148,11 +149,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                                     ),
                                                 items:
                                                     [
-                                                      'All',
-                                                      'Action',
-                                                      'Strategy',
-                                                      'RPG',
-                                                      'Puzzle',
+                                                      'Single',
+                                                      'Double',
                                                     ].map((String value) {
                                                       return DropdownMenuItem<
                                                         String
@@ -170,7 +168,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                                     }).toList(),
                                                 onChanged: (String? newValue) {
                                                   if (newValue != null) {
-                                                    selectedValue.value = newValue;
+                                                    gameTypeValue.value = newValue;
                                                   }
                                                 },
                                               ),
@@ -195,8 +193,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                         const SizedBox(height: 8),
                                         Obx(
                                           () => Container(
-                                            width: 91,
-                                            height: 22,
+                                            width: 100,
+                                            height: 25,
                                             decoration: ShapeDecoration(
                                               color: const Color(0x38D0A254),
                                               shape: RoundedRectangleBorder(
@@ -206,7 +204,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                             ),
                                             child: DropdownButtonHideUnderline(
                                               child: DropdownButton<String>(
-                                                value: selectedValue
+                                                value: legTypeValue
                                                     .value,
                                                 isExpanded: true,
                                                 icon: const Icon(
@@ -227,11 +225,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                                     ),
                                                 items:
                                                     [
-                                                      'All',
-                                                      'Action',
-                                                      'Strategy',
-                                                      'RPG',
-                                                      'Puzzle',
+                                                      'Legs',
+                                                      'Sets',
                                                     ].map((String value) {
                                                       return DropdownMenuItem<
                                                         String
@@ -249,7 +244,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                                     }).toList(),
                                                 onChanged: (String? newValue) {
                                                   if (newValue != null) {
-                                                    selectedValue.value = newValue;
+                                                    legTypeValue.value = newValue;
                                                   }
                                                 },
                                               ),
@@ -457,7 +452,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                             ),
                                             child: DropdownButtonHideUnderline(
                                               child: DropdownButton<String>(
-                                                value:selectedValue.value,
+                                                value:legType2Value.value,
                                                 isExpanded: true,
                                                 icon: const Icon(
                                                   Icons.keyboard_arrow_down,
@@ -477,11 +472,8 @@ class PlayerStatusScreen extends StatelessWidget {
                                                 ),
                                                 items:
                                                 [
-                                                  'All',
-                                                  'Action',
-                                                  'Strategy',
-                                                  'RPG',
-                                                  'Puzzle',
+                                                  'Legs',
+                                                  'Sets',
                                                 ].map((String value) {
                                                   return DropdownMenuItem<
                                                       String
@@ -499,7 +491,7 @@ class PlayerStatusScreen extends StatelessWidget {
                                                 }).toList(),
                                                 onChanged: (String? newValue) {
                                                   if (newValue != null) {
-                                                    selectedValue.value = newValue;
+                                                    legType2Value.value = newValue;
                                                   }
                                                 },
                                               ),

@@ -161,10 +161,8 @@ class FixtureScreen extends StatelessWidget {
                                 hint: 'Select Game Type',
                                 items: [
                                   'All',
-                                  'Action',
-                                  'Strategy',
-                                  'RPG',
-                                  'Puzzle',
+                                  'Register Players',
+                                  'Guest',
                                 ],
                                 selectedValue: selectedValue.value,
                                 onChanged: (value) {

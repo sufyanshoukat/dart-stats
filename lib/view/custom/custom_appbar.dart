@@ -50,6 +50,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           weight: FontWeight.w400,
           color: kQuaternaryColor,
           fontFamily: AppFonts.audioWide,
+          textAlign: TextAlign.center,
         )
             : child,
         actions: actions,

@@ -13,13 +13,14 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class PlayerRankingScreen extends StatelessWidget {
    PlayerRankingScreen({super.key});
-  var selectedValue = 'All'.obs;
+  var selectedValue = 'Legs'.obs;
+  var statValue = 'All'.obs;
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: "Statistic",),
       body: SafeArea(
         child: Padding(
           padding: AppSizes.VERTICAL,
@@ -93,11 +94,9 @@ class PlayerRankingScreen extends StatelessWidget {
                                         ),
                                         items:
                                         [
-                                          'All',
-                                          'Action',
-                                          'Strategy',
-                                          'RPG',
-                                          'Puzzle',
+                                          'Legs',
+                                          'Sets',
+
                                         ].map((String value) {
                                           return DropdownMenuItem<
                                               String
@@ -156,7 +155,7 @@ class PlayerRankingScreen extends StatelessWidget {
                                     ),
                                     child: DropdownButtonHideUnderline(
                                       child: DropdownButton<String>(
-                                        value: selectedValue.value,
+                                        value: statValue.value,
                                         isExpanded: true,
                                         icon: const Icon(
                                           Icons.keyboard_arrow_down,
@@ -177,10 +176,10 @@ class PlayerRankingScreen extends StatelessWidget {
                                         items:
                                         [
                                           'All',
-                                          'Action',
-                                          'Strategy',
-                                          'RPG',
-                                          'Puzzle',
+                                          'Daily',
+                                          'Weekly',
+                                          'Monthly',
+                                          'Yearly',
                                         ].map((String value) {
                                           return DropdownMenuItem<
                                               String
@@ -198,7 +197,7 @@ class PlayerRankingScreen extends StatelessWidget {
                                         }).toList(),
                                         onChanged: (String? newValue) {
                                           if (newValue != null) {
-                                            selectedValue.value = newValue;
+                                            statValue.value = newValue;
                                           }
                                         },
                                       ),

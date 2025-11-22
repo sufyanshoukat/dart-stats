@@ -45,16 +45,30 @@ class CustomDrawer extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    _buildDrawerItem(
+                    /*_buildDrawerItem(
                       "Home",
                       Assets.svgD1,
+                      25,
                           () {
                         Get.back();
                       },
+                    ),*/
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: MyText(
+                        text: "Players:",
+                        size: 18,
+                        weight: FontWeight.w400,
+                        color: kQuaternaryColor,
+                        fontFamily: AppFonts.audioWide,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
+                    SizedBox(height: 25,),
                     _buildDrawerItem(
                       "Player Details",
                       Assets.svgD2,
+                      36,
                           () {
                             Get.to(() => RegisterNewPlayerScreen(isShowAppBrr: true,));
                       },
@@ -62,6 +76,7 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "Edit Player Details",
                       Assets.svgD3,
+                      36,
                           () {
                             Get.to(() => EditPlayerScreen());
                       },
@@ -69,6 +84,7 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "Player Statistics",
                       Assets.svgD4,
+                      36,
                           () {
                             Get.to(() => PlayerStatusScreen(isShowAppBrr: true,));
                       },
@@ -76,13 +92,27 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "Player Ranking",
                       Assets.svgD4,
+                      36,
                           () {
                             Get.to(() => PlayerRankingScreen());
                       },
                     ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: MyText(
+                        text: "Competition:",
+                        size: 18,
+                        weight: FontWeight.w400,
+                        color: kQuaternaryColor,
+                        fontFamily: AppFonts.audioWide,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(height: 25,),
                     _buildDrawerItem(
                       "Fixtures",
                       Assets.svgD6,
+                      36,
                           () {
                             Get.to(() => FixtureScreen());
                       },
@@ -90,6 +120,7 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "1 v 1 Match",
                       Assets.svgD7,
+                      36,
                           () {
                             Get.to(() => OnevsoneScreen());
 
@@ -98,20 +129,24 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "Competition Statistics",
                       Assets.svgD4,
+                      36,
                           () {
                             Get.to(() => CompetitionStatisticsScreen());
                       },
                     ),
-                    _buildDrawerItem(
+                    /*_buildDrawerItem(
                       "Payment Method",
                       Assets.svgD8,
+                      36,
                           () {
                             Get.to(() => PaymentScreen());
                       },
+
                     ),
                     _buildDrawerItem(
                       "Profile",
                       Assets.svgD2,
+                          36,
                           () {
                             Get.to(() => SettingsScreen(isShowAppBrr: true,));
                       },
@@ -119,10 +154,11 @@ class CustomDrawer extends StatelessWidget {
                     _buildDrawerItem(
                       "Settings",
                       Assets.svgD9,
+                      36,
                           () {
                             Get.to(() => SettingsScreen(isShowAppBrr: true,));
                       },
-                    ),
+                    ),*/
                   ],
                 ),
               ),
@@ -136,10 +172,11 @@ class CustomDrawer extends StatelessWidget {
   Widget _buildDrawerItem(
       String title,
       String icon,
+      double bottom,
       VoidCallback onTap,
       ) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 36),
+      padding:  EdgeInsets.only(bottom: bottom),
       child: Bounce(
         duration: const Duration(milliseconds: 200),
         onPressed: onTap,

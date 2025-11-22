@@ -227,7 +227,7 @@ class SettingsScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   MyText(
-                                    text: "Renew Membership",
+                                    text: "Membership Details",
                                     size: 16,
                                     weight: FontWeight.w600,
                                     color: kTFBorderColor,
@@ -282,7 +282,7 @@ class SettingsScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Divider(color: kDividerColor),
+                        /*  Divider(color: kDividerColor),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Row(
@@ -297,7 +297,7 @@ class SettingsScreen extends StatelessWidget {
                                 CommonImageView(svgPath: Assets.svgChevronRight),
                               ],
                             ),
-                          ),
+                          ),*/
                         ],
                       ],
                     ),

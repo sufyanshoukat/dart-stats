@@ -161,7 +161,7 @@ class MembershipRenewalScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           MyText(
-                            text: "Monthly",
+                            text: "Annual",
                             size: 22,
                             weight: FontWeight.w500,
                             color: kYellowColor,

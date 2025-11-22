@@ -290,7 +290,7 @@ class CustomDropDown extends StatelessWidget {
                     decoration: BoxDecoration(
                         border: Border.all(color: kTFBgColor),
                         borderRadius: BorderRadius.circular(10),
-                        color: kTFBgColor),
+                        color: Color(0x87D0A254)),
                   ),
                 ),
               ),
