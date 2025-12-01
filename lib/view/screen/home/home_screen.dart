@@ -10,6 +10,7 @@ import 'package:dartmasterapp/view/screen/fixture/fixture_screen.dart';
 import 'package:dartmasterapp/view/screen/fixture/onevsone_screen.dart';
 import 'package:dartmasterapp/view/screen/home/edit_player_screen.dart';
 import 'package:dartmasterapp/view/screen/home/register_new_player_screen.dart';
+import 'package:dartmasterapp/view/screen/match_report/match_report_detail_screen.dart';
 import 'package:dartmasterapp/view/screen/playerStatus/player_status_screen.dart';
 import 'package:dartmasterapp/view/screen/register_tournment/register_tournment_screen.dart';
 import 'package:flutter/material.dart';
@@ -118,6 +119,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   buildPlayerCard(
                     onTap: (){
+                      Get.to(() => MatchReportDetailScreen());
                       //Get.to(() => CompetitionStatisticsScreen());
                     },
                     text: "Competition\nStatistics",

@@ -5,6 +5,9 @@ import 'package:dartmasterapp/view/custom/common_image_view_widget.dart';
 import 'package:dartmasterapp/view/custom/custom_appbar.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/screen/membership_renewal/membership_renewal_screen.dart';
+import 'package:dartmasterapp/view/screen/settings/change_email_address_screen.dart';
+import 'package:dartmasterapp/view/screen/settings/change_password_screen.dart';
+import 'package:dartmasterapp/view/screen/settings/privacy_policy_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -203,17 +206,22 @@ class SettingsScreen extends StatelessWidget {
                           const SizedBox(height: 22),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                MyText(
-                                  text: "Change Email Address",
-                                  size: 16,
-                                  weight: FontWeight.w600,
-                                  color: kTFBorderColor,
-                                ),
-                                CommonImageView(svgPath: Assets.svgChevronRight),
-                              ],
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>ChangeEmailAddressScreen());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  MyText(
+                                    text: "Change Email Address",
+                                    size: 16,
+                                    weight: FontWeight.w600,
+                                    color: kTFBorderColor,
+                                  ),
+                                  CommonImageView(svgPath: Assets.svgChevronRight),
+                                ],
+                              ),
                             ),
                           ),
                           Divider(color: kDividerColor),
@@ -253,33 +261,43 @@ class SettingsScreen extends StatelessWidget {
                           Divider(color: kDividerColor),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                MyText(
-                                  text: "Change Password",
-                                  size: 16,
-                                  weight: FontWeight.w600,
-                                  color: kTFBorderColor,
-                                ),
-                                CommonImageView(svgPath: Assets.svgChevronRight),
-                              ],
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>ChangePasswordScreen());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  MyText(
+                                    text: "Change Password",
+                                    size: 16,
+                                    weight: FontWeight.w600,
+                                    color: kTFBorderColor,
+                                  ),
+                                  CommonImageView(svgPath: Assets.svgChevronRight),
+                                ],
+                              ),
                             ),
                           ),
                           Divider(color: kDividerColor),
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                MyText(
-                                  text: "Privacy Settings",
-                                  size: 16,
-                                  weight: FontWeight.w600,
-                                  color: kTFBorderColor,
-                                ),
-                                CommonImageView(svgPath: Assets.svgChevronRight),
-                              ],
+                            child: GestureDetector(
+                              onTap: (){
+                                Get.to(()=>PrivacyPolicyScreen());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  MyText(
+                                    text: "Privacy Settings",
+                                    size: 16,
+                                    weight: FontWeight.w600,
+                                    color: kTFBorderColor,
+                                  ),
+                                  CommonImageView(svgPath: Assets.svgChevronRight),
+                                ],
+                              ),
                             ),
                           ),
                         /*  Divider(color: kDividerColor),

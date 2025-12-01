@@ -8,6 +8,7 @@ import 'package:dartmasterapp/view/custom/custom_dropdown.dart';
 import 'package:dartmasterapp/view/custom/my_button.dart';
 import 'package:dartmasterapp/view/custom/my_text_widget.dart';
 import 'package:dartmasterapp/view/custom/my_textfeild.dart';
+import 'package:dartmasterapp/view/screen/register_tournment/register_tournment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -179,6 +180,7 @@ class FixtureScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 Container(
                   width: double.infinity,
+
                   padding: EdgeInsets.all(15),
                   decoration: ShapeDecoration(
                     color: kTextColor,
@@ -920,7 +922,7 @@ class FixtureScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 Padding(
                   padding: AppSizes.HORIZONTAL,
-                  child: MyButton(onTap: () {}, buttonText: "Start Matches"),
+                  child: MyButton(onTap: () {Get.to(()=>RegisterTournmentScreen());}, buttonText: "Start Matches"),
                 ),
                 SizedBox(height: 10),
                 Padding(

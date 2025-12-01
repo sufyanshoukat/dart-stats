@@ -23,9 +23,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final RxInt selectedIndex = 0.obs;
 
   final List<String> onboardingImages = [
-    Assets.imagesLogo,
-    Assets.imagesLogo,
-    Assets.imagesLogo,
+    Assets.imagesLogo3,
+    Assets.imagesLogo3,
+    Assets.imagesLogo3,
   ];
 
   final List<String> titles = [
